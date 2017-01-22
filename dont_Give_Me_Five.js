@@ -10,7 +10,7 @@ Examples:
 The result may contain fives. ;-)
 The start number will always be smaller than the end number. Both numbers can be also negative!
 
-
+FIRST SOLUTION, followed by BETTER SOLUTION:
 */
 
 function dontGiveMeFive(start, end){
@@ -39,3 +39,23 @@ function dontGiveMeFive(start, end){
  //count the length of the resulting array:
   return noFives.length;
 }
+// == BETTER SOLUTION ==!!!!!!!!
+
+function dontGiveMeFive(start, end){
+  var noFives = [];
+  for(var i=start; i<=end; i++) {
+   if(!i.toString().includes('5')){
+   noFives.push(i);
+    }
+  }
+  return noFives.length;
+}
+
+/*puts it all in one package: initialize the array.
+then iterate thru as before with for loop, looking at each index
+position.
+  IF the value at i, converted to string, does NOT include '5'
+  -- the "!" in !i.toString().includes()'5') --
+  THEN push the value at that index to the newly established array.
+
+  
