@@ -17,10 +17,16 @@ Reference
 */
 
 function to_nato(words) {
-	// Go code
-  var translate=words.toLowerCase().split('');
-  var nato=[];
-  for(var i=0; i<translate.length; i++) {
+	// Version 1: first tried with dispatch table and could not get to work, so did a hurry-up version with `switch`
+  // first establish variable to hold passed in string `words` into lower case (for uniormity,
+  //no matter what is passed into string argument) array of letters:
+  var translate = words.toLowerCase().split('');
+  //establish empty array variable for pushing "translated" letters to solution:
+  var nato = [];
+  //write ridiculously long switch statement to swap out letters for NATO equivalent
+  //for empty space ' ' push nothing
+  //for anything else (presumably punctuation, or a number), push the original character
+  for(var i = 0; i<translate.length; i++) {
   switch (translate[i]) {
     case 'a':
       nato.push("Alfa");
@@ -29,83 +35,84 @@ function to_nato(words) {
       nato.push("Bravo");
       break;
     case 'c':
-    nato.push("Charlie");
-    break;
+      nato.push("Charlie");
+      break;
     case 'd':
-    nato.push("Delta");
-    break;
+      nato.push("Delta");
+      break;
     case 'e':
-    nato.push("Echo");
-    break;
+      nato.push("Echo");
+      break;
     case 'f':
-    nato.push("Foxtrot");
-    break;
+      nato.push("Foxtrot");
+      break;
     case 'g':
-    nato.push("Golf");
-    break;
+      nato.push("Golf");
+      break;
     case 'h':
-    nato.push("Hotel");
-    break;
+      nato.push("Hotel");
+      break;
     case 'i':
-    nato.push("India");
-    break;
+      nato.push("India");
+      break;
     case 'j':
-    nato.push("Juliett");
-    break;
+      nato.push("Juliett");
+      break;
     case 'k':
-    nato.push("Kilo");
-    break;
+      nato.push("Kilo");
+      break;
     case 'l':
-    nato.push("Lima");
-    break;
+      nato.push("Lima");
+      break;
     case 'm':
-    nato.push("Mike");
-    break;
+      nato.push("Mike");
+      break;
     case 'n':
-    nato.push("November");
-    break;
+      nato.push("November");
+      break;
     case 'o':
-    nato.push("Oscar");
-    break;
+      nato.push("Oscar");
+      break;
     case 'p':
-    nato.push("Papa");
-    break;
+      nato.push("Papa");
+      break;
     case 'q':
-    nato.push("Quebec");
-    break;
+      nato.push("Quebec");
+      break;
     case 'r':
-    nato.push("Romeo");
-    break;
+      nato.push("Romeo");
+      break;
     case 's':
-    nato.push("Sierra");
-    break;
+      nato.push("Sierra");
+      break;
     case 't':
-    nato.push("Tango");
-    break;
+      nato.push("Tango");
+      break;
     case 'u':
-    nato.push("Uniform");
-    break;
+      nato.push("Uniform");
+      break;
     case 'v':
-    nato.push("Victor");
-    break;
+      nato.push("Victor");
+      break;
     case 'w':
-    nato.push("Whiskey");
-    break;
+      nato.push("Whiskey");
+      break;
     case 'x':
-    nato.push("Xray");
-    break;
+      nato.push("Xray");
+      break;
     case 'y':
-    nato.push("Yankee");
-    break;
+      nato.push("Yankee");
+      break;
     case 'z':
-    nato.push("Zulu");
-    break;
+      nato.push("Zulu");
+      break;
     case ' ':
-    nato.push();
-    break;
+      nato.push();
+      break;
     default:
-    nato.push(translate[i]);
+      nato.push(translate[i]);
     }
   }
+  //`nato` array holds all the translated letters; now join back into string containing space between each but no commas
   return (nato.join(' '));
 }
