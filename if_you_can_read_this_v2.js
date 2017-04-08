@@ -1,3 +1,4 @@
+
 var natoAlphabet = {
     a: 'Alfa',
     b: 'Bravo',
